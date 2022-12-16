@@ -29,7 +29,8 @@ namespace Aile_Hekimligi_Bilgi_Yonetim_Sistemi
 
 		private void btn_misafir_ekle_Click(object sender, EventArgs e)
 		{
-
-		}
+            FrmMisafirEkle form = new FrmMisafirEkle();
+            form.Show();
+        }
 	}
 }

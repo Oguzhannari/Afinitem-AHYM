@@ -54,5 +54,29 @@ namespace Aile_Hekimligi_Bilgi_Yonetim_Sistemi
             return (dataTable);
         }
 
+        public static bool misafirEkle(MisafirEkle misafir)
+        {
+            SqlConnection newCon = new SqlConnection(ConnectionString);
+            newCon.Open();
+            string sorgu = "INSERT DoktorHastalari (hekimTc, hekimAd, hekimSoyad, hastaTc, hastaAd, hastaSoyad, hastaAnneAd, hastaBabaAd, hastaDogumTarih) VALUES (@hekimTc, @hekimAd, @hekimSoyad, @hastaTc, @hastaAd, @hastaSoyad, @hastaAnneAd, @hastaBabaAd, @hastaDogumTarihi)";
+            SqlCommand command = new SqlCommand(sorgu, newCon);
+            command.Parameters.AddWithValue("@hekimTc", misafir.hekimTc);
+            command.Parameters.AddWithValue("@hekimAd", misafir.hekimAd);
+            command.Parameters.AddWithValue("@hekimSoyad", misafir.hekimSoyad);
+            command.Parameters.AddWithValue("@hastaTc", misafir.hastaTc);
+            command.Parameters.AddWithValue("@hastaAd", misafir.hastaAd);
+            command.Parameters.AddWithValue("@hastaSoyad", misafir.HastaSoyad);
+            command.Parameters.AddWithValue("@hastaAnneAd", misafir.hastaAnneAd);
+            command.Parameters.AddWithValue("@hastaBabaAd", misafir.hastaBabaAd);
+            command.Parameters.AddWithValue("@hastaDogumTarihi", misafir.hastaDogumTarih);
+
+            MessageBox.Show("!!!!!!!!", "!!!!!");
+            command.ExecuteNonQuery();
+            newCon.Close();
+            return true;
+
+        }
+
+
     }
 }

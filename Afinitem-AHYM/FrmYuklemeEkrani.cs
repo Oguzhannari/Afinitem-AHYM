@@ -1,4 +1,5 @@
 ﻿using Afinitem_AHYM;
+using Aile_Hekimligi_Bilgi_Yonetim_Sistemi;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,6 +37,8 @@ namespace Sunum
 			{
 				timer2.Stop();
 				this.Hide();
+                FrmAnaSayfa a = new FrmAnaSayfa();
+				a.ShowDialog();
 				this.Close();
 			}
 

@@ -28,7 +28,6 @@ namespace Aile_Hekimligi_Bilgi_Yonetim_Sistemi
 			if (hasta.siraNo == -1)
 			{
                 MessageBox.Show("Bu ASM'ye kaydınız bulunmamaktadır. Lütfen Yetkili çağırın ve kaydınızı yaptırın.", "Dikkat");
-
             }
             //Sql.sirayaYaz(hasta);
             MessageBox.Show(hasta.hastaTc, hasta.hekimAd);
