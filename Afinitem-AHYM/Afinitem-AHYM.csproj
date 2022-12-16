@@ -110,6 +110,12 @@
       <DependentUpon>FrmYuklemeEkrani.cs</DependentUpon>
     </Compile>
     <Compile Include="HekimSira.cs" />
+    <Compile Include="Kabul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kabul.designer.cs">
+      <DependentUpon>Kabul.cs</DependentUpon>
+    </Compile>
     <Compile Include="MisafirEkle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmYuklemeEkrani.resx">
       <DependentUpon>FrmYuklemeEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kabul.resx">
+      <DependentUpon>Kabul.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

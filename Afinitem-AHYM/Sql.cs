@@ -53,7 +53,18 @@ namespace Aile_Hekimligi_Bilgi_Yonetim_Sistemi
             newCon.Close();
             return (dataTable);
         }
-
+        public static DataTable tabloSil()
+        {
+            SqlConnection newCon = new SqlConnection(ConnectionString);
+            newCon.Open();
+            string sorgu = "DELETE * FROM BekleyenHastalar";
+            SqlCommand command = new SqlCommand(sorgu, newCon);
+            DataTable dataTable = new DataTable();
+            SqlDataAdapter adap_obj = new SqlDataAdapter(command);
+            adap_obj.Fill(dataTable);
+            newCon.Close();
+            return (dataTable);
+        }
         public static bool misafirEkle(MisafirEkle misafir)
         {
             SqlConnection newCon = new SqlConnection(ConnectionString);
@@ -74,8 +85,9 @@ namespace Aile_Hekimligi_Bilgi_Yonetim_Sistemi
             command.ExecuteNonQuery();
             newCon.Close();
             return true;
-
         }
+
+
         public static bool sirayaYaz(HekimSira hekim_sira)
         {
             SqlConnection newCon = new SqlConnection(ConnectionString);

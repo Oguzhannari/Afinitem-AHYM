@@ -36,5 +36,10 @@ namespace Aile_Hekimligi_Bilgi_Yonetim_Sistemi
             FrmMisafirEkle form = new FrmMisafirEkle();
             form.Show();
         }
+
+		private void btn_sira_no_kaldir_Click(object sender, EventArgs e)
+		{
+			Sql.tabloSil();
+		}
 	}
 }
