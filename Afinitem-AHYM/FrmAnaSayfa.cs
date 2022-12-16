@@ -20,8 +20,12 @@ namespace Aile_Hekimligi_Bilgi_Yonetim_Sistemi
 
 		private void btn_hasta_giris_ekrani_getir_Click(object sender, EventArgs e)
 		{
+            this.Hide();
+            FrmHasta a = new FrmHasta();
 
-		}
+            a.ShowDialog();
+            this.Show();
+        }
 
 		private void afiButton1_Click(object sender, EventArgs e)
 		{
