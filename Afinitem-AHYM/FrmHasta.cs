@@ -27,10 +27,12 @@ namespace Aile_Hekimligi_Bilgi_Yonetim_Sistemi
 			HekimSira hasta = Sql.hastaSorgula(txtHastaTc.Text);
 			if (hasta.siraNo == -1)
 			{
-                MessageBox.Show("Bu ASM'ye kaydınız bulunmamaktadır. Lütfen Yetkili çağırın ve kaydınızı yaptırın.", "Dikkat");
-            }
-            //Sql.sirayaYaz(hasta);
-            MessageBox.Show(hasta.hastaTc, hasta.hekimAd);
+				MessageBox.Show("Bu ASM'ye kaydınız bulunmamaktadır. Lütfen Yetkili çağırın ve kaydınızı yaptırın.", "Dikkat");
+			}
+			else
+			{
+				Sql.sirayaYaz(hasta);
+			}
 
 
 		}

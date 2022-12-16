@@ -76,7 +76,24 @@ namespace Aile_Hekimligi_Bilgi_Yonetim_Sistemi
             return true;
 
         }
+        public static bool sirayaYaz(HekimSira hekim_sira)
+        {
+            SqlConnection newCon = new SqlConnection(ConnectionString);
+            newCon.Open();
+            string sorgu = "INSERT BekleyenHastalar (hastaTc, bagliHekimTc, siraNo, durum) VALUES (@hastaTc, @bagliHekimTc, @siraNo, @durum)";
+            SqlCommand command = new SqlCommand(sorgu);
+            command.Connection = newCon;
+            command.Parameters.AddWithValue("@hastaTc", hekim_sira.hastaTc);
+            command.Parameters.AddWithValue("@bagliHekimTc", hekim_sira.hekimTc);
+            command.Parameters.AddWithValue("@siraNo", 2);
+            command.Parameters.AddWithValue("@durum", "Bekliyor");
 
+
+            command.ExecuteNonQuery();
+            newCon.Close();
+            return true;
+
+        }
 
     }
 }
