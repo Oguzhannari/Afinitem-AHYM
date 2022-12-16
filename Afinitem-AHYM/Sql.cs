@@ -41,7 +41,18 @@ namespace Aile_Hekimligi_Bilgi_Yonetim_Sistemi
             newCon.Close();
             return (hekim_sira);
         }
-
+        public static DataTable tabloGetir()
+        {
+            SqlConnection newCon = new SqlConnection(ConnectionString);
+            newCon.Open();
+            string sorgu = "SELECT * FROM BekleyenHastalar";
+            SqlCommand command = new SqlCommand(sorgu, newCon);
+            DataTable dataTable = new DataTable();
+            SqlDataAdapter adap_obj = new SqlDataAdapter(command);
+            adap_obj.Fill(dataTable);
+            newCon.Close();
+            return (dataTable);
+        }
 
     }
 }
